@@ -1,6 +1,8 @@
 class Invoice < ActiveRecord::Base
   BASE_INVOICE_NUMBER = 100
 
+  has_many :items
+
   validates :number, presence: true
   validates :title,  presence: true
 
