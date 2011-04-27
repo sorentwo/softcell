@@ -3,7 +3,7 @@ form {
     margin: 0.25em 0 0.5em;
   }
 
-  div.datetime, div.select {
+  div.numeric, div.datetime, div.select {
     display: inline-block;
     margin-right: $grid_gutter;
   }
@@ -16,12 +16,7 @@ form {
   }
 
   input[type='number'] {
-    border: none;
-    font-size: 1.3em;
-    padding: 5px;
-    width: $col_2;
-
-    @include shadow(0, 2px, 5px, lighten($color_shadow_alt, 25%), true);
+    width: $col_3;
   }
 
   input[type='text'] {
@@ -33,7 +28,7 @@ form {
     @include shadow(0, 2px, 5px, lighten($color_shadow_alt, 25%), true);
   }
 
-  fieldset.items {
+  fieldset#line-items {
     border-top: 1px solid $color_border;
     margin-top: 1.5em;
 
