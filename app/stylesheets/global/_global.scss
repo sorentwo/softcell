@@ -8,6 +8,8 @@ body {
 
 h1 { font-size: 2em; font-weight: bold; margin-bottom: 0.5em; }
 
+a { color: $color_text; text-decoration: none; }
+
 // Global ---------------------------------------------------------------------
 
 header {
@@ -55,10 +57,38 @@ header {
   @include shadow(0, 3px, 10px, $color_shadow);
 }
 
+// Sessions -------------------------------------------------------------------
+
 body#sessions #container {
   width: $col_8;
 
   form {
     input[type='text'], input[type='password'] { width: 97.5%; }
+  }
+}
+
+// Invoices -------------------------------------------------------------------
+
+#invoices-table {
+  background: $color_paper;
+  text-align: left;
+
+  li {
+    clear: both;
+    display: block;
+
+    &.header { background: $color_foreground_alt; font-weight: bold; text-transform: capitalize; }
+    a:hover  { background: $color_highlight; }
+
+    a { border: none; }
+
+    span {
+      display: inline-block;
+      padding: 5px 10px;
+
+      &.number  { width: 10%; }
+      &.created { width: 20%; }
+      &.title   { width: 60%; }
+    }
   }
 }

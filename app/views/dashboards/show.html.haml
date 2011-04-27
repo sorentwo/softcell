@@ -1,4 +1,15 @@
 = link_to 'New Invoice', new_invoice_path
 
-- @invoices.each do |invoice|
-  = invoice.name
+%h1 Invoices
+
+%ul#invoices-table
+  %li.header
+    %span.number number
+    %span.created created
+    %span.title title
+  - @invoices.each do |invoice|
+    %li
+      = link_to invoice_path(invoice) do
+        %span.number invoice.number
+        %span.created invoice.created_at
+        %span.title invoice.title

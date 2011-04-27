@@ -32,6 +32,8 @@ body { background: #292421; color: #281e19; font: 13px/1.5em Helvetica, sans-ser
 
 h1 { font-size: 2em; font-weight: bold; margin-bottom: 0.5em; }
 
+a { color: #281e19; text-decoration: none; }
+
 header { background: rgba(57, 124, 176, 0.95); height: 3em; line-height: 1.5em; position: fixed; top: 0; width: 100%; box-shadow: 0 3px 10px #323232; -moz-box-shadow: 0 3px 10px #323232; -o-box-shadow: 0 3px 10px #323232; -webkit-box-shadow: 0 3px 10px #323232; }
 header nav { margin: 0 auto; padding: 0.5em 0; width: 975px; }
 header a { color: #f0f0f0; float: left; font-size: 15px; font-weight: bold; padding: 5px 10px; text-decoration: none; text-shadow: black 0 -1px 1px; }
@@ -42,3 +44,13 @@ header #logout-link { float: right; }
 
 body#sessions #container { width: 305px; }
 body#sessions #container form input[type='text'], body#sessions #container form input[type='password'] { width: 97.5%; }
+
+#invoices-table { background: white; text-align: left; }
+#invoices-table li { clear: both; display: block; }
+#invoices-table li.header { background: #dce6dc; font-weight: bold; text-transform: capitalize; }
+#invoices-table li a:hover { background: #397cb0; }
+#invoices-table li a { border: none; }
+#invoices-table li span { display: inline-block; padding: 5px 10px; }
+#invoices-table li span.number { width: 10%; }
+#invoices-table li span.created { width: 20%; }
+#invoices-table li span.title { width: 60%; }
