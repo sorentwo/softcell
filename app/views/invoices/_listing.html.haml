@@ -1,0 +1,11 @@
+%ul#invoices-table
+  %li.header
+    %span.number number
+    %span.created created
+    %span.title title
+  - @invoices.each do |invoice|
+    %li
+      = link_to invoice_path(invoice) do
+        %span.number= invoice.number
+        %span.created= invoice.created_at.to_formatted_s(:long)
+        %span.title= invoice.title

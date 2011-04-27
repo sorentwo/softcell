@@ -28,6 +28,9 @@ form fieldset#line-items div.total { float: right; }
 form fieldset#line-items div.total label { display: inline-block; text-align: right; }
 form fieldset#line-items div.total input { display: inline-block; margin-left: 15px; text-align: right; width: 105px; }
 
+.large-button { background: #397cb0; border-top: 1px solid #8eb9da; color: white; display: block; font-size: 15px; font-weight: bold; line-height: 15px; padding: 10px 20px; text-align: center; width: 225px; margin: 1em auto; text-shadow: black 0 -1px 1px; -moz-border-radius: 20px; -ms-border-radius: 20px; -o-border-radius: 20px; -webkit-border-radius: 20px; -webkit-background-clip: padding-box; border-radius: 20px; background: #397cb0; background: -moz-linear-gradient(0% 100% 90deg, #397cb0, #1a3850); background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#397cb0), to(#1a3850)); box-shadow: 0 1px 3px #323232; -moz-box-shadow: 0 1px 3px #323232; -o-box-shadow: 0 1px 3px #323232; -webkit-box-shadow: 0 1px 3px #323232; }
+.large-button:hover { background: #336e9d; background: -moz-linear-gradient(0% 100% 90deg, #336e9d, #142b3c); background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#336e9d), to(#142b3c)); }
+
 body { background: #292421; color: #281e19; font: 13px/1.5em Helvetica, sans-serif; }
 
 h1 { font-size: 2em; font-weight: bold; margin-bottom: 0.5em; }
