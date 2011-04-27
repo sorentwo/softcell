@@ -10,6 +10,6 @@
   - @invoices.each do |invoice|
     %li
       = link_to invoice_path(invoice) do
-        %span.number invoice.number
-        %span.created invoice.created_at
-        %span.title invoice.title
+        %span.number= invoice.number
+        %span.created= invoice.created_at.to_formatted_s(:long)
+        %span.title= invoice.title
