@@ -3,11 +3,12 @@
 = simple_form_for @invoice do |form|
   %fieldset
     = form.input :title
+    = form.input :description, input_html: { rows: 4 }
 
   %fieldset
-    = form.input :attn, :label => 'Attention'
-    = form.input :address_1
-    = form.input :address_2
+    = form.input :attn,      label: 'Attention'
+    = form.input :address_1, label: 'Street Address'
+    = form.input :address_2, label: 'City, State, Zip'
 
   %fieldset
     = form.input :number, input_html: { value: Invoice.next_number }
@@ -25,3 +26,4 @@
       %label Total
       %input{ id: 'line-item-total', type: 'text', disabled: 'disabled', value: '$0.00' }
 
+  = form.button :submit
