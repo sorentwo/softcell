@@ -6,8 +6,8 @@ body {
 
 // Type -----------------------------------------------------------------------
 
-h1 { font-size: 2em; font-weight: bold; margin-bottom: 0.5em; }
-h2 { font-size: 1.25em; font-weight: bold; margin-bottom: 0.5em; }
+h1 { font-size: 2em; margin-bottom: 0.5em; }
+h2 { font-size: 1.25em; margin-bottom: 0.5em; }
 
 a { color: $color_text; text-decoration: none; }
 
@@ -94,6 +94,82 @@ body#sessions #container {
       &.number  { width: 10%; }
       &.created { width: 20%; }
       &.title   { width: 60%; }
+    }
+  }
+}
+
+body#invoices.show {
+  #container {
+    margin: 36px auto;
+
+    .invoices {
+      margin-top: 1em;
+
+      a {
+        font-size: 1.5em;
+        line-height: 1.5em;
+        text-decoration: none;
+      }
+    }
+  }
+
+  #badging {
+    margin-bottom: 1.5em;
+    text-align: right;
+
+    p { font-size: 12px; }
+  }
+
+  #content {
+    float: left;
+    width: $col_12;
+    margin-right: $grid_gutter;
+
+    table#meta {
+      td { padding: 1.5px 6px }
+      .thead { text-align: right }
+    }
+
+    .title       { margin-bottom: 1em; }
+    .description { margin-top: 2em; }
+  }
+
+  #support {
+    float: left;
+    background: #b4d6dd;
+    margin-top: 3em;
+    padding: 12px 6px 36px;
+    width: $col_12 - $grid_gutter;
+
+    dl {
+      font-size: 1.25em;
+      line-height: 18px;
+      margin-bottom: 1em;
+    }
+
+    dt {
+      font-weight: bold;
+      margin-bottom: .2em;
+    }
+  }
+
+  #itemized {
+    font-size: 1.25em;
+    width: 100%;
+    text-align: left;
+
+    th, td        { padding: 12px 6px; letter-spacing: 0.05em; }
+    th.item-head  { background: #4a97B0; color: #fff; }
+    th.cost-head  { background: #1b789b; color: #fff; text-align: right; }
+    td.cost       { background: #b4d6dd; text-align: right; width: $col_6; }
+    td.total-head { font-weight: bold; text-align: right; }
+
+    td.total {
+      background: #131815;
+      color: #fff;
+      padding-top: 1em;
+      padding-bottom: 1em;
+      text-align: right;
     }
   }
 }

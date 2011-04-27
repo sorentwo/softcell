@@ -1,13 +1,13 @@
 form {
   legend {
-    background: $color_background_alt;
-    color: lighten($color_foreground, 20%);
+    color: lighten($color_background_alt, 15%);
     display: block;
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: bold;
     margin-bottom: 1em;
-    padding: 0.5em $grid_gutter;
+    padding: 0.5em 0;
     width: 100%;
+    text-shadow: darken($color_background_alt, 50%) 0 -1px 1px;
     box-sizing: border-box;
   }
 

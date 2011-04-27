@@ -1,0 +1,14 @@
+= simple_form_for @client do |form|
+  %legend Add A New Client
+
+  %fieldset
+    = form.input :name
+    = form.input :attention
+
+  %fieldset
+    = form.input :address
+    = form.input :city
+    = form.input :state, collection: Client::STATES, prompt: 'Select a State'
+    = form.input :zipcode
+
+  = form.button :submit, 'Add Client'
