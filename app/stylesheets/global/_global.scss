@@ -7,6 +7,7 @@ body {
 // Type -----------------------------------------------------------------------
 
 h1 { font-size: 2em; font-weight: bold; margin-bottom: 0.5em; }
+h2 { font-size: 1.25em; font-weight: bold; margin-bottom: 0.5em; }
 
 a { color: $color_text; text-decoration: none; }
 
@@ -55,6 +56,10 @@ header {
   width: $grid_width;
 
   @include shadow(0, 3px, 10px, $color_shadow);
+}
+
+nav#toolbar {
+  margin-bottom: 1.5em;
 }
 
 // Sessions -------------------------------------------------------------------

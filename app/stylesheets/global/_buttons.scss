@@ -1,5 +1,4 @@
 @mixin large-button {
-  background: $color_highlight;
   border-top: 1px solid lighten($color_highlight, 25%);
   color: white;
   display: block;
@@ -21,4 +20,25 @@
   }
 }
 
+@mixin tool-button {
+  border-top: 1px solid lighten($color_creation, 25%);
+  color: white;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 15px;
+  padding: 10px 15px;
+  text-align: center;
+  text-shadow: #666 0 -1px 1px;
+
+  @include radius(15px);
+  @include gradient($color_creation, darken($color_creation, 25%));
+  @include shadow(0, 1px, 3px, $color_shadow_alt);
+
+  &:hover {
+    @include gradient(darken($color_creation, 5%), darken($color_creation, 30%));
+  }
+}
+
 .large-button { @include large-button; }
+.tool-button  { @include tool-button; }
