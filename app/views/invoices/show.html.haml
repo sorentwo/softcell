@@ -1,0 +1,45 @@
+#badging
+  %h2 søren
+  %p 336 S Kenilworth Ave <br />Oak Park IL 60302
+
+#content
+  %h2.title= @invoice.title
+
+  %table#meta
+    %tr
+      %td.thead Client
+      %td= @invoice.client
+    %tr
+      %td.thead Attn
+      %td= @invoice.attn
+    - if @invoice.address_1.present? && @invoice.address_2.present?
+      %tr
+        %td.thead Address
+        %td= "#{@invoice.address_1} <br /> #{@invoice.address_2}"
+
+  .description
+    %p= @invoice.description
+
+#support
+  %dl
+    %dt Date
+    %dd= DateTime.now.strftime("%B %d, %Y")
+  %dl
+    %dt Due
+    %dd= DateTime.now.next_month.strftime("%B %d, %Y")
+  %dl
+    %dt Invoice Number
+    %dd= sprintf('%05d', @invoice.number)
+
+
+%table#itemized
+  %tr
+    %th.item-head Item
+    %th.cost-head Cost
+  - @invoice.items.each do |item|
+    %tr
+      %td.item= item.name
+      %td.cost= "$#{item.cost}"
+  %tr
+    %td.total-head Total
+    %td.total= "$#{@invoice.items.inject(0) { |sum, item| sum += item.cost }}"

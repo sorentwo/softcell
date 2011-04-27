@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Invoice do
   it { should validate_presence_of(:number) }
   it { should validate_presence_of(:title) }
+  it { should validate_presence_of(:client_id) }
   it { should validate_presence_of(:net_id) }
 
   describe 'next_number' do

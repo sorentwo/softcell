@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe InvoicesController do
+describe ClientsController do
   # Leveraging inherited resources
 end

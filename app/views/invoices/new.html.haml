@@ -6,12 +6,8 @@
     = form.input :description, input_html: { rows: 4 }
 
   %fieldset
-    = form.input :attn,      label: 'Attention'
-    = form.input :address_1, label: 'Street Address'
-    = form.input :address_2, label: 'City, State, Zip'
-
-  %fieldset
     = form.input :number, input_html: { value: Invoice.next_number }
+    = form.input :client_id, collection: Client.all, prompt: 'Choose a Client'
     = form.input :net_id, collection: Invoice::NET_PERIODS
     = form.input :created_at,
       order: [:day, :month, :year], discard_hour: true, discard_minute: true
