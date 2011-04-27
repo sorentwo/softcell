@@ -1,0 +1,39 @@
+body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, a, abbr, acronym, cite, code, em, img, q, strong, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+
+body { line-height: 1; }
+
+ol, ul { list-style: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+
+form fieldset { border: 0; }
+form legend { word-spacing: normal; color: #000; }
+form em, form strong { font-style: normal; font-weight: normal; }
+form abbr, form acronym { border: 0; font-variant: normal; }
+form input, form textarea, form select { font-family: inherit; font-size: 100%; font-weight: inherit; }
+
+form div.input, form div.total { margin: 0.25em 0 0.5em; }
+form div.datetime, form div.select { display: inline-block; margin-right: 15px; }
+form label { display: block; margin-bottom: 0.25em; font-size: 15px; font-weight: bold; }
+form input[type='number'] { border: none; font-size: 1.3em; padding: 5px; width: 65px; box-shadow: inset 0 2px 5px #727272; -moz-box-shadow: inset 0 2px 5px #727272; -o-box-shadow: inset 0 2px 5px #727272; -webkit-box-shadow: inset 0 2px 5px #727272; }
+form input[type='text'] { border: none; font-size: 1.3em; padding: 5px; width: 930px; box-shadow: inset 0 2px 5px #727272; -moz-box-shadow: inset 0 2px 5px #727272; -o-box-shadow: inset 0 2px 5px #727272; -webkit-box-shadow: inset 0 2px 5px #727272; }
+form fieldset.items { border-top: 1px solid #8c8c8c; margin-top: 1.5em; }
+form fieldset.items h2 { font-size: 17px; margin-top: 1.0em; margin-bottom: 0.75em; }
+form fieldset.items input.item-name, form fieldset.items input.item-cost { display: inline-block; }
+form fieldset.items input.item-name { width: 800px; }
+form fieldset.items input.item-cost { margin-left: 15px; text-align: right; width: 105px; }
+form fieldset.items div.total { float: right; }
+form fieldset.items div.total label { display: inline-block; text-align: right; }
+form fieldset.items div.total input { display: inline-block; margin-left: 15px; text-align: right; width: 105px; }
+
+body { background: #292421; color: #281e19; font: 13px/1.5em Helvetica, sans-serif; }
+
+h1 { font-size: 1.5em; font-weight: bold; }
+
+header { background: rgba(57, 124, 176, 0.95); height: 3em; line-height: 2em; position: fixed; top: 0; width: 100%; box-shadow: 0 3px 10px #323232; -moz-box-shadow: 0 3px 10px #323232; -o-box-shadow: 0 3px 10px #323232; -webkit-box-shadow: 0 3px 10px #323232; }
+header nav { margin: 0 auto; padding: 0.5em 0; width: 945px; }
+header a { color: #f0f0f0; font-size: 15px; font-weight: bold; text-decoration: none; text-shadow: black 0 -1px 1px; }
+
+#container { background: #ecf0e6; margin: 4em auto; padding: 15px; width: 945px; box-shadow: 0 3px 10px black; -moz-box-shadow: 0 3px 10px black; -o-box-shadow: 0 3px 10px black; -webkit-box-shadow: 0 3px 10px black; }

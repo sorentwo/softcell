@@ -1,0 +1,104 @@
+@mixin shadow($x, $y, $blur, $color, $inset: false) {
+  @if $inset {
+    box-shadow: inset $x $y $blur $color;
+    -moz-box-shadow: inset $x $y $blur $color;
+    -o-box-shadow: inset $x $y $blur $color;
+    -webkit-box-shadow: inset $x $y $blur $color;
+  } @else {
+    box-shadow: $x $y $blur $color;
+    -moz-box-shadow: $x $y $blur $color;
+    -o-box-shadow: $x $y $blur $color;
+    -webkit-box-shadow: $x $y $blur $color;
+  }
+}
+
+@mixin gradient($from, $to) {
+  background: $from;
+  background: -moz-linear-gradient(0% 100% 90deg, $from, $to);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
+}
+
+@mixin opacity($value) {
+  $ie_value: $value * 100;
+
+  opacity: $value;
+  filter: alpha(opacity=$ie_value);
+}
+
+@mixin disabled {
+  height: 0;
+  width: 0;
+  margin: 0;
+  @include opacity(0);
+}
+
+@mixin radius($radius) {
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -webkit-background-clip: padding-box;
+  border-radius: $radius;
+}
+
+@mixin rotate($rotation: 45deg, $originx: false, $originy: false) {
+  @if $rotation == '90deg' {
+    $filter_rotate: 1;
+  } @else if $rotation == '180deg' {
+    $filter_rotate: 2;
+  } @else if $rotation == '270deg' {
+    $filter_rotate: 3;
+  } @else {
+    $filter_rotate: 0;
+  }
+
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$filter_rotate);
+  -moz-transform:    rotate($rotation);
+  -ms-transform:     rotate($rotation);
+  -o-transform:      rotate($rotation);
+  -webkit-transform: rotate($rotation);
+  transform:         rotate($rotation);
+
+  @if $originx or $originy {
+    @include transform-origin($originx, $originy);
+  }
+}
+
+@mixin transform-origin($originx: 50%, $originy: 50%) {
+  -moz-transform-origin:    $originx $originy;
+  -ms-transform-origin:     $originx $originy;
+  -o-transform-origin:      $originx $originy;
+  -webkit-transform-origin: $originx $originy;
+  transform-origin:         $originx $originy;
+}
+
+@mixin corner($radius, $corner: 1) {
+  @if $corner == 1 {
+    border-top-left-radius: $radius;
+    -moz-border-top-left-radius: $radius;
+    -o-border-top-left-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+  } @else if $corner == 2 {
+    border-top-right-radius: $radius;
+    -moz-border-top-right-radius: $radius;
+    -o-border-top-right-radius: $radius;
+    -webkit-border-top-right-radius: $radius;
+  } @else if $corner == 3 {
+    border-bottom-left-radius: $radius;
+    -moz-border-bottom-left-radius: $radius;
+    -o-border-bottom-left-radius: $radius;
+    -webkit-border-bottom-left-radius: $radius;
+  } @else {
+    border-bottom-right-radius: $radius;
+    -moz-border-bottom-right-radius: $radius;
+    -o-border-bottom-right-radius: $radius;
+    -webkit-border-bottom-right-radius: $radius;
+  }
+
+  -webkit-background-clip: padding-box;
+}
+
+@mixin transition($property, $duration, $easing: linear) {
+  -moz-transition: $property $duration $easing;
+  -webkit-transition: $property $duration $easing;
+}

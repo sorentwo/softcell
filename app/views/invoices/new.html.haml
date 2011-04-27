@@ -1,0 +1,27 @@
+%h1 Create A New Invoice
+
+= simple_form_for @invoice do |form|
+  %fieldset
+    = form.input :number, input_html: { value: Invoice.next_number }
+    = form.input :title
+
+  %fieldset
+    = form.input :attn, :label => 'Attention'
+    = form.input :address_1
+    = form.input :address_2
+
+  %fieldset
+    = form.input :created_at,
+      order: [:day, :month, :year], discard_hour: true, discard_minute: true
+    = form.input :net_id, collection: Invoice::NET_PERIODS
+
+  %fieldset.items
+    %h2 Line Items
+    = simple_fields_for :items do |item_form|
+      = item_form.input :name, label: false, wrapper: false, input_html: { class: 'item-name' }
+      = item_form.input :cost, label: false, wrapper: false, input_html: { value: '0.00', class: 'item-cost' }
+
+    %div.total
+      %label Total
+      %input{ type: 'text', disabled: 'disabled', value: '1000' }
+

@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Invoice do
   it { should validate_presence_of(:number) }
   it { should validate_presence_of(:title) }
+  it { should validate_presence_of(:net_id) }
 
   describe 'next_number' do
     it 'should use the base number with no existing invoices' do

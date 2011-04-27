@@ -2,8 +2,13 @@
 %html
   %head
     %title Softcell
-    = stylesheet_link_tag :all
+    = stylesheet_link_tag 'style'
     = csrf_meta_tag
 
   %body
-    = yield
+    %header
+      %nav
+        = link_to 'dashboard', '#'
+
+    #container
+      = yield

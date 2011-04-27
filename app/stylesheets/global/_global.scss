@@ -1,0 +1,45 @@
+body {
+  background: $color_background;
+  color: $color_text;
+  font: 13px/1.5em Helvetica, sans-serif;
+}
+
+// Type -----------------------------------------------------------------------
+
+h1 { font-size: 2em; font-weight: bold; }
+
+// Global ---------------------------------------------------------------------
+
+header {
+  background: $color_frosted;
+  height: 3em;
+  line-height: 2em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  @include shadow(0, 3px, 10px, $color_shadow_alt);
+
+  nav {
+    margin: 0 auto;
+    padding: 0.5em 0;
+    width: $grid_width;
+  }
+
+  a {
+    color: $color_text_alt;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: #000 0 -1px 1px;
+  }
+}
+
+#container {
+  background: $color_foreground;
+  margin: 4em auto;
+  padding: $grid_gutter;
+  width: $grid_width;
+
+  @include shadow(0, 3px, 10px, $color_shadow);
+}

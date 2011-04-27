@@ -1,0 +1,66 @@
+form {
+  div.input, div.total {
+    margin: 0.25em 0 0.5em;
+  }
+
+  div.datetime, div.select {
+    display: inline-block;
+    margin-right: $grid_gutter;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.25em;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  input[type='number'] {
+    border: none;
+    font-size: 1.3em;
+    padding: 5px;
+    width: $col_2;
+
+    @include shadow(0, 2px, 5px, lighten($color_shadow_alt, 25%), true);
+  }
+
+  input[type='text'] {
+    border: none;
+    font-size: 1.3em;
+    padding: 5px;
+    width: $grid_width - $grid_gutter;
+
+    @include shadow(0, 2px, 5px, lighten($color_shadow_alt, 25%), true);
+  }
+
+  fieldset.items {
+    border-top: 1px solid $color_border;
+    margin-top: 1.5em;
+
+    h2 {
+      font-size: 17px;
+      margin-top: 1.0em;
+      margin-bottom: 0.75em;
+    }
+
+    input.item-name, input.item-cost { display: inline-block; }
+    input.item-name { width: $col_21 - 25px; }
+    input.item-cost {
+      margin-left: $grid_gutter;
+      text-align: right;
+      width: $col_3;
+    }
+
+    div.total {
+      float: right;
+
+      label { display: inline-block; text-align: right; }
+      input {
+        display: inline-block;
+        margin-left: $grid_gutter;
+        text-align: right;
+        width: $col_3;
+      }
+    }
+  }
+}
