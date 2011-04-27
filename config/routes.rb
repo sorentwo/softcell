@@ -1,6 +1,6 @@
 Softcell::Application.routes.draw do
   resource  :dashboard, only: :show
-  resources :invoices
+  resources :invoices, :except => [:index]
 
   # Authentiation
   resources :sessions, only: [:new, :create, :destroy]
