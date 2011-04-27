@@ -3,15 +3,16 @@
   %head
     %title Softcell
     = stylesheet_link_tag 'style'
+    = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js'
+    = javascript_include_tag :all
     = csrf_meta_tag
 
-  %body
-    %header
-      %nav
-        = link_to 'dashboard', '#'
+  %body{ id: controller.controller_name, class: controller.action_name }
+    - if session[:persisted]
+      %header
+        %nav
+          = link_to 'dashboard', dashboard_url
+          = link_to 'logout', logout_url, id: 'logout-link', method: :delete
 
     #container
       = yield
-
-    = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js'
-    = javascript_include_tag :all

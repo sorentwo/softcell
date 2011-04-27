@@ -13,7 +13,7 @@ h1 { font-size: 2em; font-weight: bold; margin-bottom: 0.5em; }
 header {
   background: $color_frosted;
   height: 3em;
-  line-height: 2em;
+  line-height: 1.5em;
   position: fixed;
   top: 0;
   width: 100%;
@@ -23,16 +23,27 @@ header {
   nav {
     margin: 0 auto;
     padding: 0.5em 0;
-    width: $grid_width;
+    width: $grid_full_width;
   }
 
   a {
     color: $color_text_alt;
+    float: left;
     font-size: 15px;
     font-weight: bold;
+    padding: 5px 10px;
     text-decoration: none;
     text-shadow: #000 0 -1px 1px;
+
+    &:hover {
+      background: darken($color_frosted, 5%);
+
+      @include radius(15px);
+      @include shadow(0, 2px, 5px, darken($color_frosted, 20%), true);
+    }
   }
+
+  #logout-link { float: right; }
 }
 
 #container {
@@ -42,4 +53,12 @@ header {
   width: $grid_width;
 
   @include shadow(0, 3px, 10px, $color_shadow);
+}
+
+body#sessions #container {
+  width: $col_8;
+
+  form {
+    input[type='text'], input[type='password'] { width: 97.5%; }
+  }
 }

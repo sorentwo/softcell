@@ -18,7 +18,7 @@ form div.input, form div.total { margin: 0.25em 0 0.5em; }
 form div.numeric, form div.datetime, form div.select { display: inline-block; margin-right: 15px; }
 form label { display: block; margin-bottom: 0.25em; font-size: 15px; font-weight: bold; }
 form input[type='number'] { width: 105px; }
-form input[type='text'] { border: none; font-size: 1.3em; padding: 5px; width: 930px; box-shadow: inset 0 2px 5px #727272; -moz-box-shadow: inset 0 2px 5px #727272; -o-box-shadow: inset 0 2px 5px #727272; -webkit-box-shadow: inset 0 2px 5px #727272; }
+form input[type='text'], form input[type='email'], form input[type='password'] { border: none; font-size: 1.3em; padding: 5px; width: 930px; box-shadow: inset 0 2px 5px #727272; -moz-box-shadow: inset 0 2px 5px #727272; -o-box-shadow: inset 0 2px 5px #727272; -webkit-box-shadow: inset 0 2px 5px #727272; }
 form fieldset#line-items { border-top: 1px solid #8c8c8c; margin-top: 1.5em; }
 form fieldset#line-items h2 { font-size: 17px; margin-top: 1.0em; margin-bottom: 0.75em; }
 form fieldset#line-items input.item-name, form fieldset#line-items input.item-cost { display: inline-block; }
@@ -32,8 +32,13 @@ body { background: #292421; color: #281e19; font: 13px/1.5em Helvetica, sans-ser
 
 h1 { font-size: 2em; font-weight: bold; margin-bottom: 0.5em; }
 
-header { background: rgba(57, 124, 176, 0.95); height: 3em; line-height: 2em; position: fixed; top: 0; width: 100%; box-shadow: 0 3px 10px #323232; -moz-box-shadow: 0 3px 10px #323232; -o-box-shadow: 0 3px 10px #323232; -webkit-box-shadow: 0 3px 10px #323232; }
-header nav { margin: 0 auto; padding: 0.5em 0; width: 945px; }
-header a { color: #f0f0f0; font-size: 15px; font-weight: bold; text-decoration: none; text-shadow: black 0 -1px 1px; }
+header { background: rgba(57, 124, 176, 0.95); height: 3em; line-height: 1.5em; position: fixed; top: 0; width: 100%; box-shadow: 0 3px 10px #323232; -moz-box-shadow: 0 3px 10px #323232; -o-box-shadow: 0 3px 10px #323232; -webkit-box-shadow: 0 3px 10px #323232; }
+header nav { margin: 0 auto; padding: 0.5em 0; width: 975px; }
+header a { color: #f0f0f0; float: left; font-size: 15px; font-weight: bold; padding: 5px 10px; text-decoration: none; text-shadow: black 0 -1px 1px; }
+header a:hover { background: rgba(51, 110, 157, 0.95); -moz-border-radius: 15px; -ms-border-radius: 15px; -o-border-radius: 15px; -webkit-border-radius: 15px; -webkit-background-clip: padding-box; border-radius: 15px; box-shadow: inset 0 2px 5px rgba(32, 70, 99, 0.95); -moz-box-shadow: inset 0 2px 5px rgba(32, 70, 99, 0.95); -o-box-shadow: inset 0 2px 5px rgba(32, 70, 99, 0.95); -webkit-box-shadow: inset 0 2px 5px rgba(32, 70, 99, 0.95); }
+header #logout-link { float: right; }
 
 #container { background: #ecf0e6; margin: 4em auto; padding: 15px; width: 945px; box-shadow: 0 3px 10px black; -moz-box-shadow: 0 3px 10px black; -o-box-shadow: 0 3px 10px black; -webkit-box-shadow: 0 3px 10px black; }
+
+body#sessions #container { width: 305px; }
+body#sessions #container form input[type='text'], body#sessions #container form input[type='password'] { width: 97.5%; }
