@@ -1,9 +1,9 @@
 source :rubygems
 
-gem 'haml',                '~> 3.1.0'
+gem 'haml',                '~> 3.1.1'
 gem 'inherited_resources', '~> 1.2.2'
 gem 'rails',               '~> 3.0.7'
-gem 'sass',                '~> 3.1.0'
+gem 'sass',                '~> 3.1.1'
 gem 'simple_form',         '~> 1.3.1'
 gem 'unicorn',             '~> 3.6.0'
 
