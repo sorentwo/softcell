@@ -10,7 +10,7 @@ class Invoice < ActiveRecord::Base
   validates :client_id, presence: true
   validates :net_id,    presence: true
 
-  accepts_nested_attributes_for :items, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :items, allow_destroy: true, :reject_if => lambda { |item| item[:name].blank? }
 
   def self.next_number
     self.last.nil? ? BASE_INVOICE_NUMBER : self.last.number.succ

@@ -9,3 +9,4 @@
         %span.number= invoice.number
         %span.created= invoice.created_at.to_formatted_s(:long)
         %span.title= invoice.title
+        %span.controls= link_to 'Edit', edit_invoice_url(invoice)

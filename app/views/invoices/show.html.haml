@@ -14,7 +14,7 @@
       %td= @invoice.client.attention
       %tr
         %td.thead Address
-        %td= "#{@invoice.client.address} <br /> #{@invoice.client.city} #{@invoice.client.state}, #{@invoice.client.zipcode}"
+        %td #{@invoice.client.address} <br /> #{@invoice.client.city} #{@invoice.client.state}, #{@invoice.client.zipcode}
 
   .description
     %p= @invoice.description

@@ -91,9 +91,10 @@ body#sessions #container {
       display: inline-block;
       padding: 5px 10px;
 
-      &.number  { width: 10%; }
-      &.created { width: 20%; }
-      &.title   { width: 60%; }
+      &.number   { width: 10%; }
+      &.created  { width: 20%; }
+      &.title    { width: 40%; }
+      &.controls { width: 10%; }
     }
   }
 }

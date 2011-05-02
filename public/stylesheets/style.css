@@ -64,7 +64,8 @@ body#sessions #container form input[type='text'], body#sessions #container form 
 #invoices-table li span { display: inline-block; padding: 5px 10px; }
 #invoices-table li span.number { width: 10%; }
 #invoices-table li span.created { width: 20%; }
-#invoices-table li span.title { width: 60%; }
+#invoices-table li span.title { width: 40%; }
+#invoices-table li span.controls { width: 10%; }
 
 body#invoices.show #container { margin: 36px auto; }
 body#invoices.show #container .invoices { margin-top: 1em; }

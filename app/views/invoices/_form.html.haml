@@ -1,0 +1,25 @@
+= simple_form_for @invoice do |form|
+  %legend= @invoice.new_record? ? 'Create A New Invoice' : 'Edit Invoice'
+
+  %fieldset
+    = form.input :title
+    = form.input :description, input_html: { rows: 4 }
+
+  %fieldset
+    = form.input :number, input_html: { value: Invoice.next_number }
+    = form.input :client_id, collection: Client.all, prompt: 'Choose a Client'
+    = form.input :net_id, collection: Invoice::NET_PERIODS
+    = form.input :created_at,
+      order: [:day, :month, :year], discard_hour: true, discard_minute: true
+
+  %fieldset#line-items
+    %h2 Line Items
+    = form.simple_fields_for :items do |item_form|
+      = item_form.input :name, label: false, wrapper: false, required: false, input_html: { class: 'item-name' }
+      = item_form.input :cost, label: false, wrapper: false, required: false, input_html: { value: '0.00', class: 'item-cost' }
+
+    %div.total
+      %label Total
+      %input{ id: 'line-item-total', type: 'text', disabled: 'disabled', value: '$0.00' }
+
+  = form.button :submit
