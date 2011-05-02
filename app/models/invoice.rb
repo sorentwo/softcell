@@ -15,4 +15,8 @@ class Invoice < ActiveRecord::Base
   def self.next_number
     self.last.nil? ? BASE_INVOICE_NUMBER : self.last.number.succ
   end
+
+  def total
+    self.items.inject(0) { |sum, item| sum += item.cost }
+  end
 end

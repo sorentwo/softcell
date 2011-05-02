@@ -2,11 +2,17 @@
   %li.header
     %span.number number
     %span.created created
+    %span.due due
+    %span.client client
     %span.title title
+    %span.controls controls
   - @invoices.each do |invoice|
     %li
       = link_to invoice_path(invoice) do
         %span.number= invoice.number
-        %span.created= invoice.created_at.to_formatted_s(:long)
+        %span.created= invoice.created_at.strftime("%B %d, %Y")
+        %span.due= invoice.created_at.next_month.strftime("%B %d, %Y")
+        %span.client= invoice.client.name
         %span.title= invoice.title
+        %span.total= sprintf('$%.2f', invoice.total)
         %span.controls= link_to 'Edit', edit_invoice_url(invoice)

@@ -41,4 +41,4 @@
       %td.cost= "$#{item.cost}"
   %tr
     %td.total-head Total
-    %td.total= "$#{@invoice.items.inject(0) { |sum, item| sum += item.cost }}"
+    %td.total= sprintf('$%.2f', @invoice.total)

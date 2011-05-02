@@ -61,11 +61,15 @@ body#sessions #container form input[type='text'], body#sessions #container form 
 #invoices-table li.header { background: #dce6dc; font-weight: bold; text-transform: capitalize; }
 #invoices-table li a:hover { background: #397cb0; }
 #invoices-table li a { border: none; }
-#invoices-table li span { display: inline-block; padding: 5px 10px; }
-#invoices-table li span.number { width: 10%; }
-#invoices-table li span.created { width: 20%; }
-#invoices-table li span.title { width: 40%; }
-#invoices-table li span.controls { width: 10%; }
+#invoices-table li span { border-right: 1px solid #d9d9d9; display: inline-block; padding: 5px 10px; }
+#invoices-table li span.number { width: 5%; text-align: center; }
+#invoices-table li span.created { width: 9%; }
+#invoices-table li span.due { width: 9%; }
+#invoices-table li span.client { width: 10%; }
+#invoices-table li span.title { width: 30%; }
+#invoices-table li span.controls { width: 5%; }
+#invoices-table li abbr { font-size: 0.8em; }
+#invoices-table li.header span { border-color: #dce6dc; }
 
 body#invoices.show #container { margin: 36px auto; }
 body#invoices.show #container .invoices { margin-top: 1em; }
