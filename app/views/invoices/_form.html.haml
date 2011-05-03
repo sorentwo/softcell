@@ -16,7 +16,7 @@
     %h2 Line Items
     = form.simple_fields_for :items do |item_form|
       = item_form.input :name, label: false, wrapper: false, required: false, input_html: { class: 'item-name' }
-      = item_form.input :cost, label: false, wrapper: false, required: false, input_html: { value: '0.00', class: 'item-cost' }
+      = item_form.input :cost, label: false, wrapper: false, required: false, input_html: { class: 'item-cost' }
 
     %div.total
       %label Total
