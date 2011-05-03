@@ -5,7 +5,7 @@
     %span.due due
     %span.client client
     %span.title title
-    %span.controls controls
+    %span.total total
   - @invoices.each do |invoice|
     %li
       = link_to invoice_path(invoice) do
@@ -15,4 +15,6 @@
         %span.client= invoice.client.name
         %span.title= invoice.title
         %span.total= sprintf('$%.2f', invoice.total)
-        %span.controls= link_to 'Edit', edit_invoice_url(invoice)
+  %li.footer
+    %span.outstanding Outstanding
+    %span.total= sprintf('$%.2f', Invoice.outstanding.collect(&:total).sum)

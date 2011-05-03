@@ -77,31 +77,43 @@ body#sessions #container {
 #invoices-table {
   background: $color_paper;
   text-align: left;
+  overflow: auto;
+  width: 100%;
 
   li {
     clear: both;
     display: block;
 
     &.header { background: $color_foreground_alt; font-weight: bold; text-transform: capitalize; }
-    a:hover  { background: $color_highlight; }
+    &.header span { border-color: $color_foreground_alt; }
 
-    a { border: none; }
+    &.footer { background: $color_foreground; }
+    &.footer span.total { background: #000000; color: white; }
 
-    span {
-      border-right: 1px solid lighten($color_border, 30%);
-      display: inline-block;
-      padding: 5px 10px;
-
-      &.number   { width: 5%; text-align: center; }
-      &.created  { width: 9%; }
-      &.due      { width: 9%; }
-      &.client   { width: 10%; }
-      &.title    { width: 30%; }
-      &.controls { width: 5%; }
+    a {
+      border: none;
+      &:hover { background: $color_highlight; }
     }
 
     abbr { font-size: 0.8em;  }
-    &.header span { border-color: $color_foreground_alt; }
+
+    span {
+      border-right: 1px solid lighten($color_border, 30%);
+      display: table-cell;
+      padding: 5px 10px;
+
+      &.number   { width: 5%; text-align: center; }
+      &.created  { width: 10%; }
+      &.due      { width: 10%; }
+      &.client   { width: 10%; }
+      &.title    { width: 40%; }
+      &.total    { width: 5%; text-align: right; }
+
+      &.outstanding {
+        width: 100%;
+        text-align: right;
+      }
+    }
   }
 }
 

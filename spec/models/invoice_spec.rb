@@ -6,6 +6,27 @@ describe Invoice do
   it { should validate_presence_of(:client_id) }
   it { should validate_presence_of(:net_id) }
 
+  describe 'outstanding' do
+    let!(:some_invoice) { Factory(:invoice, paid_at: 1.week.ago ) }
+    let!(:tech_invoice) { Factory(:invoice) }
+
+    specify { Invoice.outstanding.should have(1).item }
+  end
+
+  describe 'total' do
+    let!(:some_invoice) { Factory(:invoice) }
+    let!(:tech_invoice) { Factory(:invoice) }
+
+    before do
+      2.times {
+        some_invoice.items.create(name: 'Expense', cost: 1000)
+        tech_invoice.items.create(name: 'Expense', cost: 500)
+      }
+    end
+
+    specify { Invoice.total.should eq(3000) }
+  end
+
   describe 'next_number' do
     it 'should use the base number with no existing invoices' do
       Invoice.next_number.should eq(Invoice::BASE_INVOICE_NUMBER)

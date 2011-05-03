@@ -12,6 +12,9 @@ class Invoice < ActiveRecord::Base
 
   accepts_nested_attributes_for :items, allow_destroy: true, :reject_if => lambda { |item| item[:name].blank? }
 
+  scope :outstanding, lambda { where('paid_at IS NULL') }
+  scope :total,       lambda { scoped.collect(&:total).sum }
+
   def self.next_number
     self.last.nil? ? BASE_INVOICE_NUMBER : self.last.number.succ
   end
