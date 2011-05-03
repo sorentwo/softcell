@@ -20,7 +20,7 @@ class Invoice < ActiveRecord::Base
   end
 
   def net
-    NET_PERIODS[net_id]
+    NET_PERIODS[net_id.to_i]
   end
 
   def net=(value)
