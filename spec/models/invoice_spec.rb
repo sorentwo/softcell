@@ -16,4 +16,36 @@ describe Invoice do
       Invoice.next_number.should eq(101)
     end
   end
+
+  describe 'net' do
+    subject { Factory.build(:invoice, net_id: nil) }
+
+    it 'sets the net_id when the net is set' do
+      subject.net = 30
+      subject.net_id.should_not be_nil
+    end
+
+    it 'does not allow unlisted net periods' do
+      subject.net = 25
+      subject.should_not be_valid
+    end
+  end
+
+  describe 'due_at' do
+    subject { Factory(:invoice, net: 30) }
+    specify { subject.due_at.should_not eq(subject.created_at) }
+  end
+
+  describe 'due?' do
+    subject { Factory.build(:invoice, net: 30) }
+
+    it 'is not due before the due_at date' do
+      subject.should_not be_due
+    end
+
+    it 'is due after we pass due_at date' do
+      subject.created_at = 2.months.ago
+      subject.should be_due
+    end
+  end
 end
