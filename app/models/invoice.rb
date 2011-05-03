@@ -21,7 +21,7 @@ class Invoice < ActiveRecord::Base
   end
 
   def net=(value)
-    self.net_id = NET_PERIODS.index(value)
+    self.net_id = NET_PERIODS.index(value.to_i)
   end
 
   def total

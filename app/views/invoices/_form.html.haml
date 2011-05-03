@@ -8,7 +8,7 @@
   %fieldset
     = form.input :number, input_html: { value: Invoice.next_number }
     = form.input :client_id, collection: Client.all, prompt: 'Choose a Client'
-    = form.input :net_id, collection: Invoice::NET_PERIODS
+    = form.input :net, collection: Invoice::NET_PERIODS
     = form.input :created_at,
       order: [:day, :month, :year], discard_hour: true, discard_minute: true
 
