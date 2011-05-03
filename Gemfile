@@ -14,4 +14,5 @@ group :development, :test do
   gem 'shoulda',            '~> 2.11.3'
   gem 'sqlite3-ruby',       '~> 1.3.3', :require => 'sqlite3'
   gem 'unicorn',            '~> 3.6.0'
+  gem 'taps'
 end
