@@ -22,10 +22,10 @@
 #support
   %dl
     %dt Date
-    %dd= @invoice.created_at.strftime("%B %d, %Y")
+    %dd= format_date(@invoice.created_at)
   %dl
     %dt Due
-    %dd= @invoice.due_at.strftime("%B %d, %Y")
+    %dd= format_date(@invoice.due_at)
   %dl
     %dt Invoice Number
     %dd= sprintf('%05d', @invoice.number)

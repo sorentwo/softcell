@@ -10,8 +10,8 @@
     %li
       = link_to invoice_path(invoice) do
         %span.number= invoice.number
-        %span.created= invoice.created_at.strftime("%B %d, %Y")
-        %span.due= invoice.created_at.next_month.strftime("%B %d, %Y")
+        %span.created= format_date(invoice.created_at)
+        %span.due= format_date(invoice.due_at)
         %span.client= invoice.client.name
         %span.title= invoice.title
         %span.total= sprintf('$%.2f', invoice.total)
