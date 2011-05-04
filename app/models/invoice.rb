@@ -16,7 +16,7 @@ class Invoice < ActiveRecord::Base
   scope :total,       lambda { scoped.collect(&:total).sum }
 
   def self.next_number
-    self.last.nil? ? BASE_INVOICE_NUMBER : self.last.number.succ
+    self.last.nil? ? BASE_INVOICE_NUMBER : self.maximum(:number).succ
   end
 
   def net
