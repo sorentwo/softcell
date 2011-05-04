@@ -38,7 +38,7 @@
   - @invoice.items.each do |item|
     %tr
       %td.item= item.name
-      %td.cost= "$#{item.cost}"
+      %td.cost= format_currency(item.cost)
   %tr
     %td.total-head Total
-    %td.total= sprintf('$%.2f', @invoice.total)
+    %td.total= format_currency(@invoice.total)

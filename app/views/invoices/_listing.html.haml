@@ -14,7 +14,7 @@
         %span.due= format_date(invoice.due_at)
         %span.client= invoice.client.name
         %span.title= invoice.title
-        %span.total= sprintf('$%.2f', invoice.total)
+        %span.total= format_currency(invoice.total)
   %li.footer
     %span.outstanding Outstanding
-    %span.total= sprintf('$%.2f', Invoice.outstanding.collect(&:total).sum)
+    %span.total= format_currency(Invoice.outstanding.collect(&:total).sum)
