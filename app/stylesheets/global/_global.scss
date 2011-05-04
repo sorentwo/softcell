@@ -1,15 +1,7 @@
 body {
   background: $color_background;
   color: $color_text;
-  font: 13px/1.5em Helvetica, sans-serif;
 }
-
-// Type -----------------------------------------------------------------------
-
-h1 { font-size: 2em; margin-bottom: 0.5em; }
-h2 { font-size: 1.25em; margin-bottom: 0.5em; }
-
-a { color: $color_text; text-decoration: none; }
 
 // Global ---------------------------------------------------------------------
 
@@ -90,6 +82,10 @@ body#sessions #container {
     &.footer { background: $color_foreground; }
     &.footer span.total { background: #000000; color: white; }
 
+    &.due {
+      a { color: $color_suppress; }
+    }
+
     a {
       border: none;
       &:hover { background: $color_highlight; }
@@ -114,6 +110,32 @@ body#sessions #container {
         text-align: right;
       }
     }
+  }
+}
+
+nav.toolbar {
+  height: 30px;
+  padding: 10px;
+  @include gradient($color_toolbar, darken($color_toolbar, 10%));
+
+  a {
+    border: 1px solid darken($color_toolbar, 25%);
+    border-top-color: lighten($color_toolbar, 15%);
+    color: $color_paper;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    height: 10px;
+    line-height: 10px;
+    padding: 10px 20px;
+    margin-right: $grid_gutter - 5px;
+    text-align: center;
+    text-shadow: #000 0 1px 1px;
+
+    @include radius(15px);
+
+    &.print { @include gradient(lighten($color_toolbar, 10%), darken($color_toolbar, 10%)); }
+    &.edit  { @include gradient(lighten($color_toolbar, 10%), darken($color_toolbar, 10%)); }
   }
 }
 

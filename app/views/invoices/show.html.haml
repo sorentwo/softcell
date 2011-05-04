@@ -1,44 +1,5 @@
-#badging
-  %h2 søren
-  %p 336 S Kenilworth Ave <br />Oak Park IL 60302
+%nav#invoice-toolbar.toolbar
+  = link_to 'Print', print_invoice_path(@invoice), class: 'print'
+  = link_to 'Edit', edit_invoice_path(@invoice),   class: 'edit'
 
-#content
-  %h2.title= @invoice.title
-
-  %table#meta
-    %tr
-      %td.thead Client
-      %td= @invoice.client.name
-    %tr
-      %td.thead Attn
-      %td= @invoice.client.attention
-      %tr
-        %td.thead Address
-        %td #{@invoice.client.address} <br /> #{@invoice.client.city} #{@invoice.client.state}, #{@invoice.client.zipcode}
-
-  .description
-    %p= @invoice.description
-
-#support
-  %dl
-    %dt Date
-    %dd= format_date(@invoice.created_at)
-  %dl
-    %dt Due
-    %dd= format_date(@invoice.due_at)
-  %dl
-    %dt Invoice Number
-    %dd= sprintf('%05d', @invoice.number)
-
-
-%table#itemized
-  %tr
-    %th.item-head Item
-    %th.cost-head Cost
-  - @invoice.items.each do |item|
-    %tr
-      %td.item= item.name
-      %td.cost= format_currency(item.cost)
-  %tr
-    %td.total-head Total
-    %td.total= format_currency(@invoice.total)
+= render partial: @invoice

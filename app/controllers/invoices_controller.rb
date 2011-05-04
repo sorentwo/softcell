@@ -13,6 +13,12 @@ class InvoicesController < ApplicationController
     build_items
   end
 
+  def print
+    @invoice = Invoice.find(params[:id])
+
+    render :print, layout: 'print'
+  end
+
   private
 
   def build_items

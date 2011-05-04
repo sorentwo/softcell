@@ -1,0 +1,10 @@
+!!!5
+%html
+  %head
+    %title #{@invoice.number} &mdash; #{@invoice.title}
+    = stylesheet_link_tag 'print', media: 'all'
+    = csrf_meta_tag
+
+  %body{ id: controller.controller_name, class: controller.action_name }
+    #container
+      = yield

@@ -14,6 +14,14 @@ form em, form strong { font-style: normal; font-weight: normal; }
 form abbr, form acronym { border: 0; font-variant: normal; }
 form input, form textarea, form select { font-family: inherit; font-size: 100%; font-weight: inherit; }
 
+body { font: 13px/1.5em Helvetica, sans-serif; }
+
+h1 { font-size: 2em; margin-bottom: 0.5em; }
+
+h2 { font-size: 1.25em; margin-bottom: 0.5em; }
+
+a:link { color: #281e19; text-decoration: none; }
+
 form legend { color: #575150; display: block; font-size: 2em; font-weight: bold; margin-bottom: 1em; padding: 0.5em 0; width: 100%; text-shadow: black 0 -1px 1px; box-sizing: border-box; }
 form div.input, form div.total { margin: 0.25em 0 0.5em; }
 form div.numeric, form div.datetime, form div.select { display: inline-block; margin-right: 15px; }
@@ -35,13 +43,7 @@ form fieldset#line-items div.total input { display: inline-block; margin-left: 1
 .tool-button { border-top: 1px solid #e9f1ce; color: white; display: inline-block; font-size: 13px; font-weight: bold; line-height: 15px; padding: 10px 15px; text-align: center; text-shadow: #666666 0 -1px 1px; -moz-border-radius: 15px; -ms-border-radius: 15px; -o-border-radius: 15px; -webkit-border-radius: 15px; -webkit-background-clip: padding-box; border-radius: 15px; background: #bdd56b; background: -moz-linear-gradient(0% 100% 90deg, #bdd56b, #7e962b); background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#bdd56b), to(#7e962b)); box-shadow: 0 1px 3px #323232; -moz-box-shadow: 0 1px 3px #323232; -o-box-shadow: 0 1px 3px #323232; -webkit-box-shadow: 0 1px 3px #323232; }
 .tool-button:hover { background: #b4cf57; background: -moz-linear-gradient(0% 100% 90deg, #b4cf57, #6d8225); background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#b4cf57), to(#6d8225)); }
 
-body { background: #181818; color: #281e19; font: 13px/1.5em Helvetica, sans-serif; }
-
-h1 { font-size: 2em; margin-bottom: 0.5em; }
-
-h2 { font-size: 1.25em; margin-bottom: 0.5em; }
-
-a { color: #281e19; text-decoration: none; }
+body { background: #181818; color: #281e19; }
 
 header { background: rgba(57, 124, 176, 0.95); height: 3em; line-height: 1.5em; position: fixed; top: 0; width: 100%; box-shadow: 0 3px 10px #323232; -moz-box-shadow: 0 3px 10px #323232; -o-box-shadow: 0 3px 10px #323232; -webkit-box-shadow: 0 3px 10px #323232; }
 header nav { margin: 0 auto; padding: 0.5em 0; width: 975px; }
@@ -62,6 +64,7 @@ body#sessions #container form input[type='text'], body#sessions #container form 
 #invoices-table li.header span { border-color: #dce6dc; }
 #invoices-table li.footer { background: #ecf0e6; }
 #invoices-table li.footer span.total { background: #000000; color: white; }
+#invoices-table li.due a { color: #9b3232; }
 #invoices-table li a { border: none; }
 #invoices-table li a:hover { background: #397cb0; }
 #invoices-table li abbr { font-size: 0.8em; }
@@ -73,6 +76,11 @@ body#sessions #container form input[type='text'], body#sessions #container form 
 #invoices-table li span.title { width: 40%; }
 #invoices-table li span.total { width: 5%; text-align: right; }
 #invoices-table li span.outstanding { width: 100%; text-align: right; }
+
+nav.toolbar { height: 30px; padding: 10px; background: #2d2d32; background: -moz-linear-gradient(0% 100% 90deg, #2d2d32, #151517); background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#2d2d32), to(#151517)); }
+nav.toolbar a { border: 1px solid black; border-top-color: #51515a; color: white; display: inline-block; font-size: 13px; font-weight: bold; height: 10px; line-height: 10px; padding: 10px 20px; margin-right: 10px; text-align: center; text-shadow: #000 0 1px 1px; -moz-border-radius: 15px; -ms-border-radius: 15px; -o-border-radius: 15px; -webkit-border-radius: 15px; -webkit-background-clip: padding-box; border-radius: 15px; }
+nav.toolbar a.print { background: #45454d; background: -moz-linear-gradient(0% 100% 90deg, #45454d, #151517); background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#45454d), to(#151517)); }
+nav.toolbar a.edit { background: #45454d; background: -moz-linear-gradient(0% 100% 90deg, #45454d, #151517); background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#45454d), to(#151517)); }
 
 body#invoices.show #container { margin: 36px auto; }
 body#invoices.show #container .invoices { margin-top: 1em; }
