@@ -8,6 +8,7 @@ gem 'puma',        '~> 2.0'
 gem 'rails',       '~> 4.2'
 gem 'sass-rails'
 gem 'simple_form', '~> 3.0'
+gem 'uglifier'
 
 group :test do
   gem 'capybara'

@@ -10,7 +10,11 @@ module Softcell
   class Application < Rails::Application
     config.time_zone = 'Central Time (US & Canada)'
 
-    config.encoding = "utf-8"
+    config.assets.enabled = true
+    config.assets.initialize_on_precompile = false
+    config.assets.js_compressor = :uglifier
+
+    config.encoding = 'utf-8'
 
     config.filter_parameters += [:password]
   end

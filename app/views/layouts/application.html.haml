@@ -2,7 +2,7 @@
 %html
   %head
     %title Softcell
-    = stylesheet_link_tag 'style'
+    = stylesheet_link_tag :application
     = csrf_meta_tag
 
   %body{ id: controller.controller_name, class: controller.action_name }
@@ -15,5 +15,4 @@
     #container
       = yield
 
-    = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js'
-    = javascript_include_tag :all
+    = javascript_include_tag :application
