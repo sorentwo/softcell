@@ -12,4 +12,12 @@ module InvoicesHelper
     return 'due'  if invoice.due?
     nil
   end
+
+  def invoice_number(invoice)
+    if invoice.new_record?
+      invoice.class.next_number
+    else
+      invoice.number
+    end
+  end
 end
