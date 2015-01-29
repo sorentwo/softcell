@@ -7,9 +7,9 @@ class SessionsController < ApplicationController
   def create
     if params[:session] && authenticate(params[:session][:username], params[:session][:password])
       sign_in
-      redirect_to root_url, :success => 'Signed in!'
+      redirect_to root_url, success: 'Signed in!'
     else
-      render :new, :failure => 'Bad credentials.'
+      render :new, failure: 'Bad credentials.'
     end
   end
 

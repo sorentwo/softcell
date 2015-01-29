@@ -1,9 +1,13 @@
-test: &base
-  adapter: sqlite3
-  database: db/test.sqlite3
-  pool: 5
-  timeout: 5000
+development: &base
+  adapter:  postgresql
+  database: softcell_development
+  encoding: utf8
+  port: <%= ENV['DATABASE_PORT'] || 5432 %>
+  host: localhost
+  min_messages: error
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
 
-development:
+test: &test
   <<: *base
-  database: db/development.sqlite3
+  database: softcell_test

@@ -10,7 +10,8 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate(username, password)
-    username == ENV['APP_USERNAME'] && password == ENV['APP_PASSWORD']
+    username == ENV.fetch('APP_USERNAME') &&
+    password == ENV.fetch('APP_PASSWORD')
   end
 
   def sign_in

@@ -10,14 +10,6 @@
   width: $col_6;
   margin: 1em auto;
   text-shadow: #000 0 -1px 1px;
-
-  @include radius(20px);
-  @include gradient($color_highlight, darken($color_highlight, 25%));
-  @include shadow(0, 1px, 3px, $color_shadow_alt);
-
-  &:hover {
-    @include gradient(darken($color_highlight, 5%), darken($color_highlight, 30%));
-  }
 }
 
 @mixin tool-button {
@@ -30,14 +22,6 @@
   padding: 10px 15px;
   text-align: center;
   text-shadow: #666 0 -1px 1px;
-
-  @include radius(15px);
-  @include gradient($color_creation, darken($color_creation, 25%));
-  @include shadow(0, 1px, 3px, $color_shadow_alt);
-
-  &:hover {
-    @include gradient(darken($color_creation, 5%), darken($color_creation, 30%));
-  }
 }
 
 .large-button { @include large-button; }
