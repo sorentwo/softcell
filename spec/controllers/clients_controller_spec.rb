@@ -5,7 +5,7 @@ describe ClientsController do
     session[:persisted] = true
   end
 
-  describe 'on POST to create' do
+  describe 'POST to create' do
     let(:client) { mock_model(Client) }
     before do
       Client.should_receive(:new).and_return(client)

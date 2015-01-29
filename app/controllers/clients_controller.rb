@@ -1,13 +1,28 @@
 class ClientsController < ApplicationController
-  inherit_resources
+  def new
+    @client = Client.new
+  end
 
-  respond_to :html
+  def edit
+    @client = Client.find(params[:id])
+  end
 
   def create
-    create! { dashboard_url }
+    @client = Client.create(client_params)
+
+    redirect_to dashboard_url
   end
 
   def update
-    update! { dashboard_url }
+    @client = Client.find(params[:id])
+    @client.update(client_params)
+
+    redirect_to dashboard_url
+  end
+
+  private
+
+  def client_params
+    params.require(:client).allow!
   end
 end

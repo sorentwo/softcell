@@ -1,5 +1,5 @@
 class Invoice < ActiveRecord::Base
-  NET_PERIODS         = [15, 30, 60, 90]
+  NET_PERIODS         = [15, 30, 60]
   BASE_INVOICE_NUMBER = 100
 
   belongs_to :client
@@ -10,10 +10,11 @@ class Invoice < ActiveRecord::Base
   validates :client_id, presence: true
   validates :net_id,    presence: true
 
-  accepts_nested_attributes_for :items, allow_destroy: true, :reject_if => lambda { |item| item[:name].blank? }
+  accepts_nested_attributes_for :items, allow_destroy: true, reject_if: lambda { |item| item[:name].blank? }
 
-  scope :outstanding, lambda { where('paid_at IS NULL') }
-  scope :total,       lambda { scoped.collect(&:total).sum }
+  scope :descending,  -> { order('number DESC') }
+  scope :outstanding, -> { where(paid_at: nil) }
+  scope :total,       -> { scoped.map(&:total).sum }
 
   def self.next_number
     self.last.nil? ? BASE_INVOICE_NUMBER : self.maximum(:number).succ
@@ -28,11 +29,11 @@ class Invoice < ActiveRecord::Base
   end
 
   def total
-    self.items.inject(0) { |sum, item| sum += item.cost }
+    self.items.map(&:cost).reduce(0, :+)
   end
 
   def due_at
-    self.created_at.advance(:days => self.net) unless self.created_at.nil?
+    self.created_at.advance(days: self.net) unless self.created_at.nil?
   end
 
   def due?

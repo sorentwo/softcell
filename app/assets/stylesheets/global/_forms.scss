@@ -7,7 +7,6 @@ form {
     margin-bottom: 1em;
     padding: 0.5em 0;
     width: 100%;
-    text-shadow: darken($color_background_alt, 50%) 0 -1px 1px;
     box-sizing: border-box;
   }
 
@@ -34,11 +33,17 @@ form {
   input[type='text'], input[type='email'],
   input[type='password'], textarea {
     border: none;
-    font-size: 1.3em;
+    border-radius: 2px;
+    box-shadow: 0, 1px, 2px, lighten($color_shadow, 50%), true;
+    font-size: 16px;
     padding: 5px;
     width: $grid_width - $grid_gutter;
+  }
 
-    @include shadow(0, 2px, 5px, lighten($color_shadow_alt, 25%), true);
+  input[type='submit'] {
+    font-weight: bold;
+    margin-top: 8px;
+    padding: 16px;
   }
 
   fieldset#line-items {

@@ -1,10 +1,10 @@
-Factory.sequence :invoice_number do |n|
-  n
-end
+FactoryGirl.define do
+  sequence(:invoice_number) { |n| n }
 
-Factory.define :invoice do |invoice|
-  invoice.number { Factory.next :invoice_number }
-  invoice.title  'Widget Creation'
-  invoice.net_id 1
-  invoice.association :client
+  factory :invoice do
+    number { FactoryGirl.next :invoice_number }
+    title  'Widget Creation'
+    net_id 1
+    association :client
+  end
 end

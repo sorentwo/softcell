@@ -1,5 +1,5 @@
 class DashboardsController < ApplicationController
   def show
-    @invoices = Invoice.order('created_at DESC')
+    @invoices = Invoice.descending
   end
 end
