@@ -9,10 +9,10 @@
     - if session[:persisted]
       %header
         %nav
-          = link_to 'dashboard', dashboard_url
-          = link_to 'logout', logout_url, id: 'logout-link', method: :delete
+          = link_to 'Home', dashboard_url
+          = link_to 'Sign Out', logout_url, id: 'logout-link', method: :delete
 
-    #container
+    .container
       = yield
 
     = javascript_include_tag :application

@@ -1,11 +1,11 @@
 class InvoicesController < ApplicationController
-  inherit_resources
-
-  respond_to :html
-
   def new
     @invoice = Invoice.new
     build_items
+  end
+
+  def show
+    @invoice = Invoice.find(params[:id])
   end
 
   def edit

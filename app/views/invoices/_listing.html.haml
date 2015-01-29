@@ -1,20 +1,21 @@
-%ul#invoices-table
-  %li.header
-    %span.number number
-    %span.created created
-    %span.due due
-    %span.client client
-    %span.title title
-    %span.total total
-  - @invoices.each do |invoice|
-    %li{ class: invoice_class(invoice) }
-      = link_to invoice_path(invoice) do
-        %span.number= invoice.number
-        %span.created= format_date(invoice.created_at)
-        %span.due= format_date(invoice.due_at)
-        %span.client= invoice.client.name
-        %span.title= invoice.title
-        %span.total= format_currency(invoice.total)
-  %li.footer
-    %span.outstanding Outstanding
-    %span.total= format_currency(Invoice.outstanding.collect(&:total).sum)
+%table.invoices-table
+  %thead
+    %tr.header-row
+      %th.number number
+      %th.created created
+      %th.due due
+      %th.client client
+      %th.title title
+      %th.total total
+  %tbody
+    - @invoices.each do |invoice|
+      %tr{ class: invoice_class(invoice) }
+        %td.number= link_to invoice.number, invoice_path(invoice)
+        %td.created= format_date(invoice.created_at)
+        %td.due= format_date(invoice.due_at)
+        %td.client= invoice.client.name
+        %td.title= invoice.title
+        %td.total= format_currency(invoice.total)
+    %tr.footer
+      %td.outstanding{ colspan: 5 } Outstanding
+      %td.total= format_currency(Invoice.outstanding.map(&:total).sum)

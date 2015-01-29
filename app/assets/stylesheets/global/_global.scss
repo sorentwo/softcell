@@ -13,8 +13,6 @@ header {
   top: 0;
   width: 100%;
 
-  @include shadow(0, 3px, 10px, $color_shadow_alt);
-
   nav {
     margin: 0 auto;
     padding: 0.5em 0;
@@ -22,36 +20,26 @@ header {
   }
 
   a {
-    color: $color_text_alt;
     float: left;
     font-size: 15px;
     font-weight: bold;
     padding: 5px 10px;
     text-decoration: none;
-    text-shadow: #000 0 -1px 1px;
 
     &:hover {
       background: darken($color_frosted, 5%);
-
-      @include radius(15px);
-      @include shadow(0, 2px, 5px, darken($color_frosted, 20%), true);
+      border-radius: 3px;
     }
   }
 
   #logout-link { float: right; }
 }
 
-#container {
+.container {
   background: $color_foreground;
-  margin: 4em auto;
+  margin: 64px auto;
   padding: $grid_gutter;
   width: $grid_width;
-
-  @include shadow(0, 3px, 10px, $color_shadow);
-}
-
-nav#toolbar {
-  margin-bottom: 1.5em;
 }
 
 // Sessions -------------------------------------------------------------------
@@ -64,64 +52,15 @@ body#sessions #container {
   }
 }
 
-// Invoices -------------------------------------------------------------------
-
-#invoices-table {
-  background: $color_paper;
-  text-align: left;
-  overflow: auto;
-  width: 100%;
-
-  li {
-    clear: both;
-    display: block;
-
-    &.header { background: $color_foreground_alt; font-weight: bold; text-transform: capitalize; }
-    &.header span { border-color: $color_foreground_alt; }
-
-    &.footer { background: $color_foreground; }
-    &.footer span.total { background: #000000; color: white; }
-
-    &.due {
-      a { color: $color_suppress; }
-    }
-
-    a {
-      border: none;
-      &:hover { background: $color_highlight; }
-    }
-
-    abbr { font-size: 0.8em;  }
-
-    span {
-      border-right: 1px solid lighten($color_border, 30%);
-      display: table-cell;
-      padding: 5px 10px;
-
-      &.number   { width: 5%; text-align: center; }
-      &.created  { width: 10%; }
-      &.due      { width: 10%; }
-      &.client   { width: 10%; }
-      &.title    { width: 40%; }
-      &.total    { width: 5%; text-align: right; }
-
-      &.outstanding {
-        width: 100%;
-        text-align: right;
-      }
-    }
-  }
-}
 
 nav.toolbar {
   height: 30px;
   padding: 10px;
-  @include gradient($color_toolbar, darken($color_toolbar, 10%));
+  margin-bottom: 1.5em;
 
   a {
-    border: 1px solid darken($color_toolbar, 25%);
-    border-top-color: lighten($color_toolbar, 15%);
-    color: $color_paper;
+    background: $color_border;
+    border-radius: 4px;
     display: inline-block;
     font-size: 13px;
     font-weight: bold;
@@ -130,19 +69,11 @@ nav.toolbar {
     padding: 10px 20px;
     margin-right: $grid_gutter - 5px;
     text-align: center;
-    text-shadow: #000 0 1px 1px;
-
-    @include radius(15px);
-
-    &.print { @include gradient(lighten($color_toolbar, 10%), darken($color_toolbar, 10%)); }
-    &.edit  { @include gradient(lighten($color_toolbar, 10%), darken($color_toolbar, 10%)); }
   }
 }
 
 body#invoices.show {
   #container {
-    margin: 36px auto;
-
     .invoices {
       margin-top: 1em;
 

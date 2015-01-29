@@ -1,0 +1,37 @@
+// Invoices -------------------------------------------------------------------
+
+.invoices-table {
+  background: $color_paper;
+  text-align: left;
+  width: 100%;
+
+  tr {
+    padding: 0 16px;
+    border-bottom: 1px solid lighten($color_border, 30%);
+
+    &:hover:not(.header-row) {
+      background-color: lighten($color_foreground_alt, 5%);
+    }
+  }
+
+  .header-row {
+    background-color: $color_toolbar;
+    color: $color_paper;
+  }
+
+  th {
+    text-transform: capitalize;
+  }
+
+  td, th {
+    padding: 6px;
+  }
+
+  .total, .outstanding {
+    text-align: right;
+  }
+
+  a {
+    color: $color_highlight;
+  }
+}
