@@ -1,4 +1,12 @@
 body   { font: 13px/1.5em Helvetica, sans-serif; }
 h1     { font-size: 2em; margin-bottom: 0.5em; }
 h2     { font-size: 1.25em; margin-bottom: 0.5em; }
-a:link { color: $color_text; text-decoration: none; }
+
+a:link, a:visited {
+  color: $color_text;
+  text-decoration: none;
+}
+
+a:hover {
+  color: lighten($color_text, 10%);
+}
