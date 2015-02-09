@@ -23,6 +23,6 @@ class ClientsController < ApplicationController
   private
 
   def client_params
-    params.require(:client).allow!
+    params.require(:client).permit!
   end
 end
