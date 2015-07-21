@@ -4,37 +4,54 @@
 @import 'global/type';
 
 #container {
-  margin: 5em auto;
-  width: $grid_width;
+  margin: 4em auto;
+  width: $grid_full_width;
 }
 
-#badging {
+.badging {
   margin-bottom: 1.5em;
   text-align: right;
 
-  p { font-size: 12px; }
-}
-
-#content {
-  float: left;
-  width: $col_12;
-  margin-right: $grid_gutter;
-
-  table#meta {
-    td { padding: 1.5px 6px }
-    .thead { text-align: right }
+  h2 {
+    font-size: 18px;
+    line-height: 1;
+    margin-bottom: 0;
   }
 
-  .title       { margin-bottom: 1em; }
-  .description { margin-top: 2em; }
+  p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
 }
 
-#support {
+.content {
+  float: left;
+  width: 50%;
+
+  .meta {
+    td { padding: 2px 6px; }
+  }
+
+  .thead {
+    text-align: right;
+  }
+
+  .title {
+    font-weight: 700;
+    margin-bottom: 1em;
+  }
+
+  .description {
+    margin-top: 2em;
+  }
+}
+
+.support {
   float: left;
   background: #b4d6dd;
   margin-top: 3em;
-  padding: 12px 6px 36px;
-  width: $col_12 - $grid_gutter;
+  padding: 12px 12px 36px;
+  width: 50%;
 
   dl {
     font-size: 1.25em;
@@ -48,12 +65,12 @@
   }
 }
 
-#itemized {
+.itemized {
   font-size: 1.25em;
   width: 100%;
   text-align: left;
 
-  th, td        { padding: 12px 6px; letter-spacing: 0.05em; }
+  th, td        { padding: 12px 6px; }
   th.item-head  { background: #4a97B0; color: #fff; }
   th.cost-head  { background: #1b789b; color: #fff; text-align: right; }
   td.cost       { background: #b4d6dd; text-align: right; width: $col_6; }
