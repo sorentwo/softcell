@@ -7,36 +7,29 @@ body {
 
 header {
   background: $color_frosted;
-  height: 3em;
-  line-height: 1.5em;
+  height: 4em;
+  line-height: 3.5em;
   position: fixed;
   top: 0;
   width: 100%;
 
   nav {
     margin: 0 auto;
-    padding: 0.5em 0;
     width: $grid_full_width;
   }
 
-  a {
-    float: left;
-    font-size: 15px;
-    font-weight: bold;
+  a, a:visited, a:link {
+    color: white;
+    font-size: 1.1em;
+    font-weight: 600;
     padding: 5px 10px;
     text-decoration: none;
-
-    &:hover {
-      background: darken($color_frosted, 5%);
-      border-radius: 3px;
-    }
   }
 
-  #logout-link { float: right; }
+  .logout-link { float: right; }
 }
 
 .container {
-  background: $color_foreground;
   margin: 64px auto;
   padding: $grid_gutter;
   width: $grid_width;
@@ -53,23 +46,11 @@ body#sessions #container {
 }
 
 
-nav.toolbar {
-  height: 30px;
+.toolbar {
+  min-height: 60px;
   padding: 10px;
   margin-bottom: 1.5em;
-
-  a {
-    background: $color_border;
-    border-radius: 4px;
-    display: inline-block;
-    font-size: 13px;
-    font-weight: bold;
-    height: 10px;
-    line-height: 10px;
-    padding: 10px 20px;
-    margin-right: $grid_gutter - 5px;
-    text-align: center;
-  }
+  text-align: right;
 }
 
 body#invoices.show {

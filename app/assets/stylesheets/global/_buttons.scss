@@ -14,10 +14,12 @@
 }
 
 @mixin tool-button {
+  background: $color_creation;
+  border-radius: 3px;
   display: inline-block;
-  font-size: 13px;
+  font-size: 1.1em;
   font-weight: bold;
-  line-height: 15px;
+  line-height: 1.5;
   padding: 10px 15px;
   text-align: center;
 

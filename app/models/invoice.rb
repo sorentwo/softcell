@@ -14,7 +14,7 @@ class Invoice < ActiveRecord::Base
 
   scope :descending,  -> { order('number DESC') }
   scope :outstanding, -> { where(paid_at: nil) }
-  scope :total,       -> { scoped.map(&:total).sum }
+  scope :total,       -> { scoped.pluck(:total).sum }
 
   def self.next_number
     self.last.nil? ? BASE_INVOICE_NUMBER : self.maximum(:number).succ
@@ -29,18 +29,16 @@ class Invoice < ActiveRecord::Base
   end
 
   def total
-    self.items.map(&:cost).reduce(0, :+)
+    items.map(&:cost).reduce(0, :+)
   end
 
   def due_at
-    self.created_at.advance(days: self.net) unless self.created_at.nil?
+    created_at.advance(days: self.net) if created_at.present?
   end
 
   def due?
-    due_at = self.due_at
-
-    if due_at
-      self.due_at < Time.now
+    if due_at.present?
+      due_at < Time.now
     else
       false
     end

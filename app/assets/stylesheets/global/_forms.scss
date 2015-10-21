@@ -10,11 +10,11 @@ form {
     box-sizing: border-box;
   }
 
-  div.input, div.total {
+  .input, .total {
     margin: 0.25em 0 0.5em;
   }
 
-  div.numeric, div.datetime, div.select {
+  .numeric, .datetime, .select {
     display: inline-block;
     margin-right: $grid_gutter;
   }
@@ -36,8 +36,7 @@ form {
     border-radius: 2px;
     box-shadow: 0, 1px, 2px, lighten($color_shadow, 50%), true;
     font-size: 16px;
-    padding: 5px;
-    width: $grid_width - $grid_gutter;
+    padding: 6px;
   }
 
   input[type='submit'] {

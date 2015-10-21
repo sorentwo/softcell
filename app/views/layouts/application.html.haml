@@ -10,7 +10,7 @@
       %header
         %nav
           = link_to 'Home', dashboard_url
-          = link_to 'Sign Out', logout_url, id: 'logout-link', method: :delete
+          = link_to 'Sign Out', logout_url, method: :delete, class: 'logout-link'
 
     .container
       = yield
