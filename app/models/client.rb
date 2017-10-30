@@ -55,9 +55,11 @@ class Client < ActiveRecord::Base
 
   has_many :invoices
 
-  validates :name,    presence: true
+  validates :name, presence: true
   validates :address, presence: true
-  validates :city,    presence: true
-  validates :state,   presence: true
+  validates :city, presence: true
+  validates :state, presence: true
   validates :zipcode, presence: true
+
+  scope :alphabetical, -> { order(name: :asc) }
 end

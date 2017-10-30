@@ -1,14 +1,14 @@
 class Invoice < ActiveRecord::Base
-  NET_PERIODS         = [15, 30, 60]
+  NET_PERIODS = [7, 15, 30, 60]
   BASE_INVOICE_NUMBER = 100
 
   belongs_to :client
   has_many :items
 
-  validates :number,    presence: true
-  validates :title,     presence: true
+  validates :number, presence: true
+  validates :title, presence: true
   validates :client_id, presence: true
-  validates :net_id,    presence: true
+  validates :net_id, presence: true
 
   accepts_nested_attributes_for :items, allow_destroy: true, reject_if: lambda { |item| item[:name].blank? }
 
@@ -16,8 +16,25 @@ class Invoice < ActiveRecord::Base
   scope :outstanding, -> { where(paid_at: nil) }
   scope :total,       -> { scoped.pluck(:total).sum }
 
+  # Class Methods
+
   def self.next_number
     self.last.nil? ? BASE_INVOICE_NUMBER : self.maximum(:number).succ
+  end
+
+  # Instance Methods
+
+  def clone
+    self.dup.tap do |cloned|
+      cloned.items = self.items.map(&:dup)
+      cloned.number = self.class.next_number
+    end
+  end
+
+  def build_items(number: 1)
+    number.times { items.build }
+
+    self
   end
 
   def net

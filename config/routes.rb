@@ -1,13 +1,14 @@
 Softcell::Application.routes.draw do
   resource  :dashboard, only:   [:show]
-  resources :clients,   except: [:index, :show]
+  resources :clients, except: [:index, :show]
   resources :invoices,  except: [:index] do
     member { get :print }
+    member { post :clone }
   end
 
   resources :sessions, only: [:new, :create, :destroy]
 
-  get    'login'  => 'sessions#new', as: :login
+  get 'login'  => 'sessions#new', as: :login
   delete 'logout' => 'sessions#destroy', as: :logout
 
   root to: 'dashboards#show'

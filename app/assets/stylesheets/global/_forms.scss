@@ -45,6 +45,11 @@ form {
     padding: 16px;
   }
 
+  fieldset {
+    position: relative;
+    width: 100%;
+  }
+
   fieldset#line-items {
     border-top: 1px solid $color_border;
     margin-top: 1.5em;

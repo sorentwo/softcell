@@ -33,8 +33,8 @@ describe Invoice do
     end
 
     it 'should use the highest number plus one with existing invoices' do
-      newest  = Factory(:invoice, number: 200)
-      highest = Factory(:invoice, number: 100)
+      Factory(:invoice, number: 200)
+      Factory(:invoice, number: 100)
 
       Invoice.next_number.should eq(201)
     end

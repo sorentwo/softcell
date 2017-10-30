@@ -1,7 +1,6 @@
 class InvoicesController < ApplicationController
   def new
-    @invoice = Invoice.new
-    build_items
+    @invoice = Invoice.new.build_items
   end
 
   def show
@@ -9,8 +8,7 @@ class InvoicesController < ApplicationController
   end
 
   def edit
-    @invoice = Invoice.find(params[:id])
-    build_items
+    @invoice = Invoice.find(params[:id]).build_items
   end
 
   def create
@@ -33,11 +31,13 @@ class InvoicesController < ApplicationController
     render :print, layout: 'print'
   end
 
-  private
+  def clone
+    @invoice = Invoice.find(params[:id]).clone
 
-  def build_items
-    2.times { @invoice.items.build }
+    render :new
   end
+
+  private
 
   def invoice_params
     params.require(:invoice).permit!

@@ -1,5 +1,6 @@
 %nav#invoice-toolbar.toolbar
   = link_to 'Print', print_invoice_path(@invoice), class: 'print'
-  = link_to 'Edit', edit_invoice_path(@invoice),   class: 'edit'
+  = link_to 'Edit', edit_invoice_path(@invoice), class: 'edit'
+  = button_to 'Clone', clone_invoice_path(@invoice), class: 'clone'
 
 = render partial: @invoice
