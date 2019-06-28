@@ -6,11 +6,11 @@
     = csrf_meta_tag
 
   %body{ id: controller.controller_name, class: controller.action_name }
-    - if session[:persisted]
-      %header
-        %nav
-          = link_to 'Home', dashboard_url
-          = link_to 'Sign Out', logout_url, method: :delete, class: 'logout-link'
+    %header
+      %nav
+        = link_to 'Softcell', dashboard_url
+        = link_to 'Create New Invoice', new_invoice_path, class: 'tool-button'
+        = link_to 'Add a Client', new_client_path, class: 'tool-button'
 
     .container
       = yield

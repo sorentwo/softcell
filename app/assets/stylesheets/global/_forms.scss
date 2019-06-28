@@ -1,4 +1,7 @@
 form {
+  display: block;
+  margin: 0 auto;
+
   legend {
     color: lighten($color_background_alt, 15%);
     display: block;
@@ -14,9 +17,9 @@ form {
     margin: 0.25em 0 0.5em;
   }
 
-  .numeric, .datetime, .select {
+  .integer, .datetime, .select {
     display: inline-block;
-    margin-right: $grid_gutter;
+    margin-right: 0.5em;
   }
 
   label {
@@ -24,6 +27,10 @@ form {
     margin-bottom: 0.25em;
     font-size: 15px;
     font-weight: bold;
+  }
+
+  input, textarea {
+    width: 100%;
   }
 
   input[type='number'] {
@@ -40,19 +47,20 @@ form {
   }
 
   input[type='submit'] {
+    border-radius: 0.25rem;
+    border: 0;
+    box-shadow: 0 3px 4px $color_border;
+    cursor: pointer;
     font-weight: bold;
-    margin-top: 8px;
-    padding: 16px;
-  }
-
-  fieldset {
-    position: relative;
-    width: 100%;
+    margin-top: 1rem;
+    max-width: 10em;
+    padding: 1rem 0.5rem;
+    text-align: center;
   }
 
   fieldset#line-items {
     border-top: 1px solid $color_border;
-    margin-top: 1.5em;
+    margin: 1.5rem 0;
 
     h2 {
       font-size: 17px;
@@ -61,15 +69,20 @@ form {
     }
 
     input.item-name, input.item-cost { display: inline-block; }
-    input.item-name { width: $col_21 - 25px; }
+
+    input.item-name {
+      width: 80%;
+    }
+
     input.item-cost {
-      margin-left: $grid_gutter;
-      text-align: right;
-      width: $col_3;
+      padding: 3px;
+      float: right;
+      width: 18%;
     }
 
     div.total {
       float: right;
+      margin-top: 1rem;
 
       label { display: inline-block; text-align: right; }
       input {

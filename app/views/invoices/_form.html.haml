@@ -1,9 +1,8 @@
 = simple_form_for @invoice do |form|
   %legend= @invoice.new_record? ? 'Create A New Invoice' : 'Edit Invoice'
 
-  %fieldset
-    = form.input :title
-    = form.input :description, input_html: { rows: 4 }
+  = form.input :title
+  = form.input :description, input_html: { rows: 4 }
 
   %fieldset
     = form.input :number, input_html: { value: invoice_number(@invoice) }
@@ -15,8 +14,9 @@
   %fieldset#line-items
     %h2 Line Items
     = form.simple_fields_for :items do |item_form|
-      = item_form.input :name, label: false, wrapper: false, required: false, input_html: { class: 'item-name' }
-      = item_form.input :cost, label: false, wrapper: false, required: false, input_html: { class: 'item-cost' }
+      .line-item
+        = item_form.input :name, label: false, wrapper: false, required: false, input_html: { class: 'item-name' }
+        = item_form.input :cost, label: false, wrapper: false, required: false, input_html: { class: 'item-cost' }
 
     %div.total
       %label Total
