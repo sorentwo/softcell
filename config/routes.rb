@@ -6,10 +6,5 @@ Softcell::Application.routes.draw do
     member { post :clone }
   end
 
-  resources :sessions, only: [:new, :create, :destroy]
-
-  get 'login'  => 'sessions#new', as: :login
-  delete 'logout' => 'sessions#destroy', as: :logout
-
   root to: 'dashboards#show'
 end
