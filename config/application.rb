@@ -1,6 +1,10 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'rails/all'
+require 'rails'
+require 'active_record/railtie'
+require 'action_controller/railtie'
+require 'action_view/railtie'
+require 'sprockets/railtie'
 
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
@@ -12,10 +16,7 @@ module Softcell
 
     config.assets.enabled = true
     config.assets.initialize_on_precompile = false
-    config.assets.js_compressor = :uglifier
 
     config.encoding = 'utf-8'
-
-    config.filter_parameters += [:password]
   end
 end

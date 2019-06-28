@@ -1,18 +1,10 @@
 source 'https://rubygems.org'
 
-ruby '2.3.5'
+ruby '2.6.1'
 
-gem 'haml-rails', '~> 0.8'
-gem 'pg', '~> 0.18'
-gem 'puma', '~> 2.11'
-gem 'rails', '~> 4.2'
-gem 'sassc-rails', '~> 1.3'
-gem 'simple_form', '~> 3.0'
-gem 'uglifier', '~> 2.7'
-
-group :test do
-  gem 'capybara', '~> 2.4'
-  gem 'factory_girl_rails', '~> 4.5'
-  gem 'rspec-rails', '~> 2.99'
-  gem 'shoulda',     '~> 2.11'
-end
+gem 'haml-rails', '~> 2.0'
+gem 'pg', '~> 1.1'
+gem 'puma', '~> 4.0'
+gem 'rails', '~> 5.2'
+gem 'sassc-rails', '~> 2.1'
+gem 'simple_form', '~> 4.1'
