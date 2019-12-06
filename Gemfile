@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "2.6.1"
+ruby "~> 2.6"
 
 gem "bootsnap", "~> 1.4"
 gem "haml-rails", "~> 2.0"
